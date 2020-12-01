@@ -1,7 +1,7 @@
 ﻿@using ReadExcel.Models
 @model IEnumerable<UserModel>
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -11,29 +11,48 @@
     <title>Users</title>
 </head>
 <body>
-    @using (Html.BeginForm("Index", "User", FormMethod.Post))
-    {
-        <input type="submit" value="Get Users" />
-        <input type="text" name="filtro" />
-    }
-    @if (Model.Count() > 0)
-    {
-        <hr />
-        <table cellpadding="0" cellspacing="0" border="1">
-            <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-            </tr>
-            @foreach (UserModel user in Model)
-            {
-                <tr>
-                    <td>@user.Name</td>
-                    <td>@user.Email</td>
-                    <td>@user.Phone</td>
-                </tr>
-            }
-        </table>
-    }
+        <div class="row">
+            <div class="col-lg-4">
+                <h1>Read Excel</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label contenteditable="false">Cliccare sul pulsante per caricare l'intero file .xlsx</label>
+            </div>
+            <div class="col-lg-4">
+                @using (Html.BeginForm("Index", "User", FormMethod.Post))
+                {
+                    <input type="submit" value="Get Users" />
+                    <input type="text" name="filtro" placeholder="inserisci il testo da cercare" />
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                @if (Model.Count() > 0)
+                {
+                    <hr />
+                    <table cellpadding="0" cellspacing="0" border="1">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                        @foreach (UserModel user in Model)
+                        {
+                            <tr>
+                                <td>@user.Name</td>
+                                <td>@user.Email</td>
+                                <td>@user.Phone</td>
+                            </tr>
+                        }
+                    </table>
+                }
+
+            </div>
+        </div>
+    
 </body>
 </html>

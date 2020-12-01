@@ -16,7 +16,6 @@ namespace ReadExcel.Controllers
         public IActionResult Index()
         {
             return View(new List<UserModel>());
-
         }
 
         [HttpPost]
@@ -50,7 +49,9 @@ namespace ReadExcel.Controllers
             }
             else
             {
-                return View(users.Where(c => c.Name == filtro));
+                return View(users.Where(c => c.Name == filtro || 
+                                             c.Phone == filtro || 
+                                             c.Email == filtro));
             }
         }
     }
