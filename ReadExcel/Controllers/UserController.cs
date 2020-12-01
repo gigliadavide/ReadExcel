@@ -16,6 +16,7 @@ namespace ReadExcel.Controllers
         public IActionResult Index()
         {
             return View(new List<UserModel>());
+
         }
 
         [HttpPost]
