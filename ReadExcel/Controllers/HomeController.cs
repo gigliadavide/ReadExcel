@@ -17,14 +17,14 @@ namespace ReadExcel.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Applicazione per la lettura di un file .xlsx.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Giglia Davide.";
 
             return View();
         }
