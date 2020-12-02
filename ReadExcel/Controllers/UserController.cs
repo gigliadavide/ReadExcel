@@ -49,7 +49,7 @@ namespace ReadExcel.Controllers
                 using (var stream = System.IO.File.Open(fileName, FileMode.Open, FileAccess.Read))
                 {
                     users = getListaUser(stream);
-                }
+                } 
             }
 
 
