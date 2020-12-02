@@ -38,7 +38,7 @@ namespace ReadExcel.Controllers
                     using (var stream = file.OpenReadStream())
                     {
                         users = getListaUser(stream);
-                    }
+                    } 
                 }
             }
             else if(Request.Form["GetUser"].ToString() == "Get Users")
